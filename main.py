@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect
 from flask_restx import Resource, Api
 from Employee import Employee
 
@@ -11,7 +11,8 @@ todos = {}
 @api.route('/<string:todo_id>')
 class TodoSimple(Resource):
     def get(self, todo_id):
-        return {todo_id: todos[todo_id]}
+        #return {todo_id: todos[todo_id]}
+        return redirect("http://www.example.com", code=302)
 
     def put(self, todo_id):
         todos[todo_id] = request.form['data']

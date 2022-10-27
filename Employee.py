@@ -1,5 +1,4 @@
-class Employee: 
-    
+class Employee:
     def __init__(self, name, age) -> None:
         self.name = name
         self.age = age
